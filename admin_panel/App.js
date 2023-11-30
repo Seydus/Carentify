@@ -25,4 +25,5 @@ function App() {
   );
 }
 
+// sample ra ni tanawon nako balik. 
 export default App;
