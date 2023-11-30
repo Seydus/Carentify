@@ -26,4 +26,7 @@ function App() {
 }
 
 // sample ra ni tanawon nako balik. 
+//new sample nako  
+//new sample nako  
+//new sample nako  
 export default App;
