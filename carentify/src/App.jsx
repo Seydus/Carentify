@@ -3,7 +3,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import CarRental from "./pages/CarRental";
-import ProcessRental from "./pages/ProcessRental";
+import Catalog from "./pages/Catalog";
+import ConfirmInformation from "./pages/ConfirmInformation";
+import Details from "./pages/Details";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/car-rental" element={<CarRental />} />
-        <Route path="/process-rental" element={<ProcessRental />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/confirm-information" element={<ConfirmInformation />} />
+        <Route path="/details" element={<Details />} />
       </Routes>
     </Router>
   );
