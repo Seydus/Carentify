@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add this CSS to your styles */
+.overflow-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.overflow-container::before,
+.overflow-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+  pointer-events: none;
+}
+
+.overflow-container::before {
+  left: 0;
+}
+
+.overflow-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
+}
