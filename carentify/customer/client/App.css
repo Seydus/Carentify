@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.hide-scroll-bar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.hide-scroll-bar::-webkit-scrollbar {
-  display: none;
-}
-
 /* Add this CSS to your styles */
 .overflow-container {
   position: relative;
@@ -36,3 +27,5 @@
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
 }
+
+

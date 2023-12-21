@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../AppContext.jsx";
 import { Link } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar.jsx";
 import Footer from "../components/Footer.jsx";

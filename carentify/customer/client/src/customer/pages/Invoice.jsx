@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { AppContext } from "../AppContext.jsx";
-import NavigationBar from "../components/NavigationBar.jsx";
-import Footer from "../components/Footer.jsx";
-import InvoiceSummaryDetails from "../components/Invoice/InvoiceSummaryDetails.jsx";
-import BookingNumberAndPriceSummary from "../components/Invoice/BookingNumberAndPriceSummary.jsx";
-import CarTabRental from "../components/CarTabRental.jsx";
+import NavigationBar from "../../components/NavigationBar.jsx";
+import Footer from "../../components/Footer.jsx";
+import InvoiceSummaryDetails from "../../components/Invoice/InvoiceSummaryDetails.jsx";
+import BookingNumberAndPriceSummary from "../../components/Invoice/BookingNumberAndPriceSummary.jsx";
+import CarTabRental from "../../components/CarTabRental.jsx";
 
 function Invoice() {
   const { personalData, updatePersonalData } = useContext(AppContext);
