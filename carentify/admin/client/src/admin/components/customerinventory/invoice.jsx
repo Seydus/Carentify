@@ -15,16 +15,16 @@ import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 const Invoice = () => {
   return (
-    <Container maxWidth="md" sx={{ my: 4 }}>
-      <Typography variant="h4" align="center" sx={{ mb: 2 }}>
+    <Container maxWidth="md" className="my-4">
+      <Typography variant="h4" align="center" className="mb-2">
         PAID
       </Typography>
 
-      <Typography variant="h5" align="center" sx={{ mb: 2 }}>
+      <Typography variant="h5" align="center" className="m-10">
         INV-0019
       </Typography>
 
-      <Grid container spacing={2} sx={{ mt: 2 }}>
+      <Grid container spacing={2} className="mt-2">
         <Grid item xs={6}>
           <Typography variant="body1">
             <strong>Due date:</strong> 25 Dec 2023
@@ -37,11 +37,11 @@ const Invoice = () => {
         </Grid>
       </Grid>
 
-      <Typography variant="body1" sx={{ mt: 2 }}>
+      <Typography variant="body1" className="mt-2">
         <strong>Number:</strong> INV-0019
       </Typography>
 
-      <Typography variant="body1" sx={{ mt: 2 }}>
+      <Typography variant="body1" className="mt-2">
         <strong>Billed to:</strong>
         <br />
         John Doe
@@ -51,7 +51,7 @@ const Invoice = () => {
         09165829832
       </Typography>
 
-      <TableContainer component={Paper} sx={{ mt: 4 }}>
+      <Paper className="mt-4">
         <Table>
           <TableHead>
             <TableRow>
@@ -63,14 +63,12 @@ const Invoice = () => {
           <TableBody>
             <TableRow>
               <TableCell>1</TableCell>
-              <TableCell>
-                Rental Vehicle
-              </TableCell>
+              <TableCell>Rental Vehicle</TableCell>
               <TableCell>$55.50</TableCell>
             </TableRow>
           </TableBody>
         </Table>
-      </TableContainer>
+      </Paper>
     </Container>
   );
 };

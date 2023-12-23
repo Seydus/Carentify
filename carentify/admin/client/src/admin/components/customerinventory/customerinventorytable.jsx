@@ -111,14 +111,15 @@ const CustomerInventoryTable = () => {
   };
 
   return (
-    <div>
+    <div className="space-y-6 rounded-lg">
       <TextField
         label="Search by name"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full"
       />
 
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} className="bg-white rounded-md shadow-md">
         <Table sx={{ minWidth: 1050 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -140,6 +141,7 @@ const CustomerInventoryTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
         component="div"
@@ -148,6 +150,7 @@ const CustomerInventoryTable = () => {
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
+        className="bg-white rounded-md shadow-md"
       />
 
       {/* Details Modal */}
