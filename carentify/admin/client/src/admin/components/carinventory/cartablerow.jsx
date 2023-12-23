@@ -3,7 +3,7 @@ import { TableRow, TableCell, Button, Avatar } from "@mui/material";
 
 const CarTableRow = ({ car, handleDetailsClick }) => {
   const getStatusColor = () => {
-    return car.status === "In Stock" ? "text-green-500" : "text-red-500";
+    return car.status === "Available" ? "text-green-500" : "text-red-500";
   };
 
   return (
@@ -15,11 +15,12 @@ const CarTableRow = ({ car, handleDetailsClick }) => {
       >
         <div className="flex items-center space-x-2">
           <Avatar
-            alt={car.name}
+            alt={car.model}
             src={car.img}
             className="w-8 h-8 rounded-none"
           />
-          <span className="text-gray-800 font-semibold">{car.name}</span>
+          <span className="text-gray-800 font-semibold">{car.make}</span>
+          <span className="text-gray-800 font-thin">{car.model}</span>
         </div>
       </TableCell>
       <TableCell className="text-gray-800">

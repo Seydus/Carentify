@@ -16,12 +16,24 @@ const CarDetailsModal = ({
         <div>
           <input
             type="text"
-            placeholder="Make and Model"
-            value={editedCar.makeAndModel}
+            placeholder="Make"
+            value={editedCar.make}
             onChange={(e) =>
               setEditedCar({
                 ...editedCar,
-                makeAndModel: e.target.value,
+                type: e.target.value,
+              })
+            }
+            className="border border-gray-300 p-2 w-full mb-4"
+          />
+          <input
+            type="text"
+            placeholder="Model"
+            value={editedCar.model}
+            onChange={(e) =>
+              setEditedCar({
+                ...editedCar,
+                type: e.target.value,
               })
             }
             className="border border-gray-300 p-2 w-full mb-4"
@@ -81,8 +93,8 @@ const CarDetailsModal = ({
               }
               className="mt-1 p-2 border border-gray-300 rounded w-full"
             >
-              <option value="In Stock">In Stock</option>
-              <option value="Out of Stock">Out of Stock</option>
+              <option value="In Stock">Available</option>
+              <option value="Out of Stock">Sold</option>
               {/* Add more options if needed */}
             </select>
           </div>
@@ -113,16 +125,15 @@ const CarDetailsModal = ({
             src={selectedCar.img} // Make sure 'img' is a valid property of 'selectedCar'
             className="mx-auto mb-4 rounded-full"
           />
-          <h6 className="text-lg font-bold mb-2">
-            Make and Model: {selectedCar.makeAndModel}
-          </h6>
+          <p className="mb-2">Make: {selectedCar.make}</p>
+          <p className="mb-2">Model: {selectedCar.model}</p>
           <p className="mb-2">Type: {selectedCar.type}</p>
           <p className="mb-2">Price: {selectedCar.price}</p>
           <p className="mb-2">VIN: {selectedCar.vin}</p>
           <div className="mb-2">
             <p>Status: {selectedCar.status}</p>
           </div>
-          <p className="mb-2">Description: {selectedCar.description}</p>
+          <p className="mb-10">Description: {selectedCar.description}</p>
         </div>
       );
     }

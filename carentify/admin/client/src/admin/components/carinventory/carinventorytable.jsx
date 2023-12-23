@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Paper,
   TableContainer,
@@ -11,12 +11,6 @@ import CarTableRow from "./cartablerow";
 import CarDetailsModal from "./cardetailsmodel";
 import { TableRow, TableCell, Button, Avatar } from "@mui/material";
 
-// Sample data (you can replace this with your actual data)
-const rows = [
-  { name: "Car1", price: 10000, vin: "VIN001", status: "In Stock" },
-  { name: "Car2", price: 15000, vin: "VIN002", status: "Out of Stock" },
-];
-
 const CarInventoryTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -25,9 +19,18 @@ const CarInventoryTable = () => {
   const [editMode, setEditMode] = useState(false);
   const [editedCar, setEditedCar] = useState(null);
   const [newPhoto, setNewPhoto] = useState(null);
+  const [carData, setCarData] = useState([]);
 
-  const filteredRows = rows.filter((row) =>
-    row.name.toLowerCase().includes(searchQuery.toLowerCase())
+  useEffect(() => {
+    // Fetch car inventory data from the API
+    fetch("http://localhost:5000/api/carinventory")
+      .then((response) => response.json())
+      .then((data) => setCarData(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const filteredRows = carData.filter((row) =>
+    row.make.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleChangePage = (event, newPage) => {
